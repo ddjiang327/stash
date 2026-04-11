@@ -1,1 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stash – Never Forget Where You Put Things</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #F7F5F0;
+      color: #1A1714;
+    }
+
+    /* Hero */
+    .hero {
+      background: #C84B2F;
+      color: #fff;
+      text-align: center;
+      padding: 80px 24px 72px;
+    }
+    .hero .app-icon {
+      width: 100px;
+      height: 100px;
+      border-radius: 22px;
+      margin: 0 auto 24px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 52px;
+    }
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+    }
+    .hero p {
+      font-size: 20px;
+      opacity: 0.9;
+      max-width: 480px;
+      margin: 0 auto 36px;
+      line-height: 1.5;
+    }
+    .hero .cta {
+      display: inline-block;
+      background: #fff;
+      color: #C84B2F;
+      font-weight: 700;
+      font-size: 16px;
+      padding: 14px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+    .hero .cta:hover { opacity: 0.9; }
+
+    /* Features */
+    .features {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 72px 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+    }
+    .feature-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 28px 24px;
+      border: 1.5px solid #E2DDD6;
+    }
+    .feature-card .emoji { font-size: 32px; margin-bottom: 14px; }
+    .feature-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+    .feature-card p  { font-size: 14px; color: #8C8479; line-height: 1.6; }
+
+    /* Tagline */
+    .tagline {
+      text-align: center;
+      padding: 64px 24px;
+      background: #EEEBE4;
+    }
+    .tagline h2 {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+    .tagline p { font-size: 16px; color: #8C8479; max-width: 420px; margin: 0 auto; }
+
+    /* Languages */
+    .languages {
+      text-align: center;
+      padding: 56px 24px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .languages h2 { font-size: 24px; font-weight: 700; margin-bottom: 20px; }
+    .lang-pills { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+    .lang-pill {
+      background: #fff;
+      border: 1.5px solid #E2DDD6;
+      border-radius: 50px;
+      padding: 10px 22px;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 13px;
+      color: #8C8479;
+      border-top: 1px solid #E2DDD6;
+    }
+    footer a { color: #C84B2F; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="app-icon">📦</div>
+  <h1>Stash</h1>
+  <p>Never forget where you put things again. Snap a photo, note the location, find it instantly.</p>
+  <a class="cta" href="#" id="appstore-link">Download on the App Store</a>
+</section>
+
+<section class="features">
+  <div class="feature-card">
+    <div class="emoji">📷</div>
+    <h3>Photo Memory</h3>
+    <p>Snap a photo of the item and where it's stored. No more guessing.</p>
+  </div>
+  <div class="feature-card">
+    <div class="emoji">🔍</div>
+    <h3>Instant Search</h3>
+    <p>Search by item name or location. Find anything in seconds.</p>
+  </div>
+  <div class="feature-card">
+    <div class="emoji">🏷️</div>
+    <h3>Smart Categories</h3>
+    <p>Organize by documents, electronics, tools, clothing, and more.</p>
+  </div>
+  <div class="feature-card">
+    <div class="emoji">📊</div>
+    <h3>Export Your Data</h3>
+    <p>Export to Excel or back up your inventory as JSON anytime.</p>
+  </div>
+  <div class="feature-card">
+    <div class="emoji">🔒</div>
+    <h3>100% Private</h3>
+    <p>All data stays on your device. No accounts, no cloud, no tracking.</p>
+  </div>
+  <div class="feature-card">
+    <div class="emoji">⚡</div>
+    <h3>Simple & Fast</h3>
+    <p>Add an item in under 30 seconds. Clean design, no clutter.</p>
+  </div>
+</section>
+
+<section class="tagline">
+  <h2>放哪了？Stash knows.</h2>
+  <p>For passports, tools, medicine, seasonal items — anything you might forget where you put.</p>
+</section>
+
+<section class="languages">
+  <h2>Available in 3 languages</h2>
+  <div class="lang-pills">
+    <div class="lang-pill">🇨🇳 中文</div>
+    <div class="lang-pill">🇬🇧 English</div>
+    <div class="lang-pill">🇫🇷 Français</div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Ruoya Wu &nbsp;·&nbsp;
+  <a href="privacy.html">Privacy Policy</a>
+</footer>
+
+</body>
+</html>
 
