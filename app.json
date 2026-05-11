@@ -1,15 +1,20 @@
 {
   "expo": {
-    "name": "testApp",
-    "slug": "testApp",
-    "version": "1.0.0",
+    "name": "Cached",
+    "slug": "cached-app",
+    "version": "1.0.3",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "testapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.dakcl.stash",
+      "buildNumber": "2",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -33,16 +38,23 @@
           "image": "./assets/images/splash-icon.png",
           "imageWidth": 200,
           "resizeMode": "contain",
-          "backgroundColor": "#ffffff",
+          "backgroundColor": "#F7F5F0",
           "dark": {
-            "backgroundColor": "#000000"
+            "backgroundColor": "#F7F5F0"
           }
         }
-      ]
+      ],
+      "expo-localization"
     ],
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "7fa3583c-1ab6-4048-8dbf-01ebc3f03806"
+      }
     }
   }
 }
