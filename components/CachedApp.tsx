@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   View,
   Text,
@@ -808,6 +808,8 @@ function App() {
 
   // ── Form View ─────────────────────────────────────────────────────────────
   if (view === 'form' && editingItem) {
+    const scrollRef = useRef(null);
+    const locationY = useRef(null);
     const isNew   = !items.find(i => i.id === editingItem.id);
     const update  = (k, v) => setEditingItem(prev => ({ ...prev, [k]: v }));
     const canSave = editingItem.name.trim() && editingItem.location.trim();
@@ -834,6 +836,7 @@ function App() {
         </View>
 
         <ScrollView
+          ref={scrollRef}
           style={{ flex: 1 }}
           contentContainerStyle={{ padding: 20, paddingBottom: 60 }}
           keyboardShouldPersistTaps="handled"
@@ -883,16 +886,23 @@ function App() {
           />
 
           {/* Location */}
-          <Text style={s.fieldLabel}>{t.location}</Text>
-          <TextInput
-            value={editingItem.location}
-            onChangeText={v => update('location', v)}
-            placeholder={t.locationPlaceholder}
-            placeholderTextColor={C.textMuted}
-            style={[s.input, { marginBottom: 16 }]}
-            multiline
-            numberOfLines={2}
-          />
+          <View onLayout={e => { locationY.current = e.nativeEvent.layout.y; }}>
+            <Text style={s.fieldLabel}>{t.location}</Text>
+            <TextInput
+              value={editingItem.location}
+              onChangeText={v => update('location', v)}
+              onFocus={() => {
+                if (scrollRef.current && locationY.current != null) {
+                  scrollRef.current.scrollTo({ y: Math.max(0, locationY.current - 140), animated: true });
+                }
+              }}
+              placeholder={t.locationPlaceholder}
+              placeholderTextColor={C.textMuted}
+              style={[s.input, { marginBottom: 16 }]}
+              multiline
+              numberOfLines={2}
+            />
+          </View>
 
           {/* Location photo */}
           <PhotoUpload
